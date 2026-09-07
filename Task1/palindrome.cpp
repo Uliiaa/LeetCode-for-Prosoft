@@ -1,11 +1,11 @@
 class Solution {
 public:
-    int getReversed (int num){
+    int getReversed (int copyNum){
         int reversedNum = 0;
 
-        while (num > 0){
-            reversedNum = num % 10 + reversedNum * 10;
-            num /= 10;
+        while (copyNum > 0){
+            reversedNum = copyNum % 10 + reversedNum * 10;
+            copyNum /= 10;
         }
 
         return reversedNum;
