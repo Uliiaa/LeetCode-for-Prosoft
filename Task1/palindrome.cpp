@@ -1,21 +1,16 @@
 class Solution {
 public:
-    int getReversed (int copyNum){
-        int reversedNum = 0;
-
-        while (copyNum > 0){
-            reversedNum = copyNum % 10 + reversedNum * 10;
-            copyNum /= 10;
-        }
-
-        return reversedNum;
-    }
-
     bool isPalindrome (int num){
-        if (num > 0){
-            return getReversed(num) == num;
-        } else {
+        if (num % 10 == 0 && num != 0){
             return false;
         }
+
+        int reverse = 0;
+        while(num > reverse){
+            reverse = reverse * 10 + num % 10;
+            num /= 10;
+        }
+
+        return reverse / 10 == num || reverse == num;
     }
 };
